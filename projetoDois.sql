@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `projetoDois`
---
+/* ALTERAR O NOME DO BANCO DE DADOS ASSIM QUE POSSÍVEL */
 
 -- --------------------------------------------------------
 
