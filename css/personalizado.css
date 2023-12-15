@@ -11,6 +11,7 @@ body {
 #calendar {
     max-width: 900px;
     margin: 0 auto;
+    margin-top: 3%;
 }
 
 .row{
@@ -72,8 +73,15 @@ a:focus {
 }
 
 footer{
-    background-color: #446280;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2C3E50;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
 }
 
 /* ---------------------------------------------------
@@ -89,7 +97,7 @@ footer{
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: #2C3E50;
     color: #fff;
     transition: all 0.3s;
 }
@@ -101,7 +109,7 @@ footer{
 #sidebar .sidebar-header {
     text-align: center;
     padding: 20px;
-    background: #6d7fcc;
+    background: #2C3E50;
 }
 
 #sidebar ul.components {
@@ -125,11 +133,11 @@ footer{
     background: #fff;
 }
 
-#sidebar ul li.active>a,
+/* #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
     background: #6d7fcc;
-}
+} */
 
 a[data-toggle="collapse"] {
     position: relative;
@@ -215,7 +223,7 @@ ul ul a {
     justify-content: center;
     align-items: center;
     width: 60%;
-    background-color: #6d7fcc;
+    background-color: #2C3E50;
 }
 
 .area-login {

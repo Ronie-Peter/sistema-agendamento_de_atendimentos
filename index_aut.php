@@ -69,7 +69,7 @@
                     </li>
 
                     <li>
-                        <a href="sobre.php"><i class="fas fa-info-circle"></i> Sobre</a>
+                        <a href="informacao.php"><i class="fas fa-info-circle"></i> Informações</a>
                     </li>
 
                     <li id="logout">

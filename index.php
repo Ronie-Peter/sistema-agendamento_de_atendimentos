@@ -16,7 +16,7 @@
 <html lang="pt-BR">
 
     <head>
-        <title>Sistema de Agendamentos - UFAC</title>
+        <title>Agendamento Jurídico - HCE</title>
         <!-- Required meta tags -->
         <meta charset='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -42,16 +42,16 @@
                 <div class="sidebar-header">
                     <img id="logo" src="resources/ufac.png" alt="logo">
                     <br>
-                    <h3>Agendamento de espaços</h3>
+                    <h3><strong>Agendamento Jurídico</strong></h3>
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Universidade Federal do Acre</p>
+                    <p style="text-align: center;">Assessoria Jurídica | HCE</p>
                     <li>
                         <a href="./"><i class="fa fa-home"></i> Página Inicial</a>
                     </li>
 
-                    <li class="active">
+                    <!-- <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-map"></i> Espaços</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
@@ -66,12 +66,14 @@
                                 <a href="index.php?cod=3"> Laboratórios</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li>
-                        <a href="sobre.php"><i class="fas fa-info-circle"></i> Sobre</a>
+                        <a href="informacao.php"><i class="fas fa-info-circle"></i> Informações</a>
                     </li>
-
+                    <li>
+                        <a href="materiais.php"><i class="fa fa-book fa-fw"></i> Materiais</a>
+                    </li>
                     <li>
                         <a href="login.php"><i class="fa fa-user"></i> Login</a>
                     </li>
@@ -88,18 +90,20 @@
                     }
                 ?>
                 <!--Barra contendo o botão que expande/retrai o menu sidebar-->
-                <nav class="navbar navbar-expand-lg">
+                <!-- <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <button type="button" id="sidebarCollapse" class="btn btn-primary"><i class="fas fa-bars"></i> Menu</button>
                     </div>
-                </nav>
+                </nav> -->
                 <!-- Carregamento do calendário -->
+                <div style="text-align: center;"><p><h1>Assessoramento para Sindicantes e Encarregados de IPM</h1></p></div>
                 <div id='calendar'></div>
                 <!-- Rodapé da pagina -->
                 <footer class="main-footer p-4 mt-5">
                     <div class="container">
                         <div class="text-center">
-                            Version <a href="https://github.com/Bezerha/Projeto-Agendamento"> 2.3.5 </a> &copy; 2022 NIEAD
+                            <span>Hospital Central do Exército<br>
+                            <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e Comunicação</span>
                         </div>
                     </div>
                 </footer>
@@ -224,6 +228,12 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
         <!-- Scripts personalizados -->
         <script src="js/personalizado.js"></script>
+        <!-- Instrução JavaScript para atualizar ano vigente no footer -->
+        <script>
+            const yearElement = document.getElementById('currentYear');
+            const currentYear = new Date().getFullYear();
+            yearElement.textContent = ` ${currentYear}`;
+        </script>
         <script>
         document.addEventListener('DOMContentLoaded', function() {
             /* Instruções javascript - carregamento personalizado do calendário */

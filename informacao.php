@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-    <head>
-        <title>Sobre - Sistema de Agendamentos - UFAC</title>
+<head>
+        <title>Agendamento Jurídico - HCE</title>
         <!-- Required meta tags -->
         <meta charset='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!-- FullCalendar CSS -->
+        <link href='./css/core.css' rel='stylesheet' />
+        <link href='./css/daygrid.css' rel='stylesheet' />
+        <link href='./css/daygrid.css' rel='stylesheet' />
+        <link href='./css/list.css' rel='stylesheet' />
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Scrollbar Custom CSS -->
@@ -25,32 +30,37 @@
                 <div class="sidebar-header">
                     <img id="logo" src="resources/ufac.png" alt="logo">
                     <br>
-                    <h3>Agendamento de espaços</h3>
+                    <h3><strong>Agendamento Jurídico</strong></h3>
                 </div>
                 <!-- SubMenu contendo os filtros de visaalização da pagina -->
                 <ul class="list-unstyled components">
-                    <p>Universidade Federal do Acre</p>
+                    <p style="text-align: center;">Assessoria Jurídica - HCE</p>
                     <li>
                         <a href="index.php"><i class="fa fa-home"></i> Página Inicial</a>
                     </li>
-
                     <li>
-                        <a href="sobre.php"><i class="fas fa-info-circle"></i> Sobre</a>
+                        <a href="informacao.php"><i class="fas fa-info-circle"></i> Informações</a>
+                    </li>
+                    <li>
+                        <a href="materiais.php"><i class="fa fa-book fa-fw"></i> Materiais</a>
+                    </li>
+                    <li>
+                        <a href="login.php"><i class="fa fa-user"></i> Login</a>
                     </li>
                 </ul>
             </nav>
 
             <div id="content">
                 <!-- Barra contendo o botão que expande/retrai o menu sidebar -->
-                <nav class="navbar navbar-expand-lg">
+                <!-- <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <button type="button" id="sidebarCollapse" class="btn btn-primary"><i class="fas fa-bars"></i> Menu</button>
                     </div>
-                </nav>
+                </nav> -->
                 <!-- Informações sobre o website -->
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-left">
-                        <div class="col-lg-10">
+                        <div class="col-lg-10" id='calendar'>
                             <h2 class="fw-bolder">Sistema de agendamento de espaços da Universidade Federal do Acre</h2>
                             <p class="lead fw-normal text-muted mb-0">Para solicitar o uso de um espaço, clique em qualquer dia no calendário, preencha o formulário e aguarde a aprovação do administrador.</p>
                             <p class="lead fw-normal text-muted mb-0">Solicitações com aprovação pendente estão no calendário em cor <span style="color: #FFD700">amarela</span> e as aprovadas estão em <span style="color: #00D100">verde</span>.</p>
@@ -70,7 +80,8 @@
                 <footer class="main-footer p-4 mt-5">
                     <div class="container">
                         <div class="text-center">
-                            Version <a href="https://github.com/Bezerha/Projeto-Agendamento"> 2.3.5 </a> &copy; 2022 NIEAD
+                            <span>Hospital Central do Exército<br>
+                            <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e Comunicação</span>
                         </div>
                     </div>
                 </footer>
@@ -89,6 +100,12 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
         <!-- Script personalizado -->
         <script src="js/personalizado.js"></script>
+        <!-- Instrução JavaScript para atualizar ano vigente no footer -->
+        <script>
+            const yearElement = document.getElementById('currentYear');
+            const currentYear = new Date().getFullYear();
+            yearElement.textContent = ` ${currentYear}`;
+        </script>
     </body>
 
 </html>
