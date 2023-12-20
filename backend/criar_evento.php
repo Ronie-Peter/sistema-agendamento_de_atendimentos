@@ -1,4 +1,22 @@
 <?php
+    
+    // Definição dos horários de início e fim desejados
+    $startTime = strtotime('07:30');
+    $endTime = strtotime('12:00');
+
+    $availableTimes = []; // Array para armazenar os horários disponíveis
+
+    // Geração dos horários de 45 minutos entre 07:30 e 12:00
+    while ($startTime < $endTime) {
+        $endTimeSlot = strtotime('+45 minutes', $startTime);
+        $timeSlot = [
+            'start' => date('H:i', $startTime),
+            'end' => date('H:i', $endTimeSlot)
+        ];
+        array_push($availableTimes, $timeSlot);
+        $startTime = $endTimeSlot;
+    }
+
     /* Iniciando conexão com banco de dados */
     include_once "conexao.php";
     /* Iniciando sessão */
@@ -7,9 +25,10 @@
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     /* Conversão - data/hora do formato brasileiro para o formato do Banco de Dados */
     $data_start_conv = date("Y-m-d H:i:s", strtotime($dados['start']));
-    $data_end_conv = date("Y-m-d H:i:s", strtotime($dados['end']));
-    /* Define o fuso horário para o fuso de Rio Branco - AC */
-    date_default_timezone_set('America/Rio_branco');
+    // Adiciona 45 minutos ao tempo de início para obter o tempo de término
+    $data_end_conv = date("Y-m-d H:i:s", strtotime($dados['start'] . ' +45 minutes'));
+    /* Define o fuso horário para o fuso de Brasília - DF */
+    date_default_timezone_set('America/Sao_Paulo');
     
     /* Tratamento de erro - impede horarios iguais data do fim do evento menor que a data de inicio criar um evento para antes da data atual */
     if($data_end_conv > $data_start_conv && $data_start_conv > date('Y-m-d H:i:s') && $data_end_conv > date('Y-m-d H:i:s')){
