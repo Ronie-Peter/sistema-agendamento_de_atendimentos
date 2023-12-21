@@ -29,7 +29,7 @@
     </head>
 
     <body class="body-login">
-        <!-- Enclausura os objetos dentro de uma área do website e os separa em subáreas para que interajam corretamente -->
+        <!-- Encapsula os objetos dentro de uma área do website e os separa em sub áreas para que interajam corretamente -->
         <div class="area">
             <div class="area-logo">
                 <a href="./">
