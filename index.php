@@ -156,14 +156,15 @@ mysqli_close($conn);
                     <span id="msg-add"></span>
                     <form id="addevent" method="POST" enctype="multipart/form-data">
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Espaço: </label>
+                            <label class="col-sm-2 col-form-label">Categoria</label>
                             <div class="col-sm-10">
                                 <select name="title" class="form-control" id="title" required="required">
-                                    <option value="" disabled selected hidden>Selecione um espaço...</option>
+                                    <option value="" disabled selected hidden>Selecione uma categoria para atendimento</option>
 
                                     <optgroup label="Categoria do Atendimento">
+                                        <option value="IPM">IPM</option>
+                                        <option value="Demais">Demais</option>
                                         <option value="Sindicancia">Sindicância</option>
-                                        <option value="IPM">Inquérito Policial Militar</option>
                                     </optgroup>
 
                                     <!-- <optgroup label="Áreas para esportes">
@@ -188,17 +189,17 @@ mysqli_close($conn);
                             </div> -->
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Data da reserva: </label>
+                            <label class="col-sm-2 col-form-label">Data da reserva</label>
                             <div class="col-sm-10">
                                 <input type="date" name="date" class="form-control" id="date" required="required">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Hora da reserva: </label>
+                            <label class="col-sm-2 col-form-label">Hora da reserva</label>
                             <div class="col-sm-10">
                                 <select name="start" class="form-control" id="start" required="required">
-                                    <option value="" disabled selected hidden>Selecione um horário...</option>
+                                    <!-- <option value="" disabled selected hidden>Selecione um horário...</option> -->
                                     <!-- Opções de horários dentro do intervalo -->
                                     <option value="07:30">07:30</option>
                                     <option value="08:15">08:15</option>
