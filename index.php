@@ -164,7 +164,7 @@ mysqli_close($conn);
                                     <optgroup label="Categoria do Atendimento">
                                         <option value="IPM">IPM</option>
                                         <option value="Demais">Demais</option>
-                                        <option value="Sindicancia">Sindicância</option>
+                                        <option value="Sindicância">Sindicância</option>
                                     </optgroup>
 
                                     <!-- <optgroup label="Áreas para esportes">
