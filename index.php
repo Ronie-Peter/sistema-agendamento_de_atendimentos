@@ -284,6 +284,7 @@ mysqli_close($conn);
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
             /* Instruções javascript - carregamento personalizado do calendário */
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -294,6 +295,7 @@ mysqli_close($conn);
                     center: 'title',
                     right: 'dayGridMonth,listYear'
                 },
+
                 selectable: true,
                 eventLimit: true,
                 /* Filtragem da escolha de visualização dos eventos */
@@ -323,10 +325,23 @@ mysqli_close($conn);
                     };
                 },
                 /* Instruções javascript - tratamento e recebimento das informações do banco de dados do evento */
+
+                
                 select: function(info) {
+
+                    var selectedDate = info.start; // A data de início da seleção
+                    var formattedDate = formatDate(selectedDate);
+
+                    // Atualiza o valor do input do tipo date com a data formatada
+                   
+
+
+
                     $('#cadastrar #start').val(info.start.toLocaleString());
                     $('#cadastrar #end').val(info.end.toLocaleString());
+                    $('#date').val(formattedDate);
                     $('#cadastrar').modal('show');
+                
                 },
                 eventClick: function(info) {
                     info.jsEvent.preventDefault();
@@ -343,11 +358,26 @@ mysqli_close($conn);
                     $('#visualizar #description').val(info.event.extendedProps.description);
                     $('#visualizar #color').val(info.event.backgroundColor);
                     $('#visualizar').modal('show');
+
+                    
                 },
             });
             /* Renderização do calendario */
             calendar.render();
         });
+
+        // Função para formatar a data como "YYYY-MM-DD"
+function formatDate(date) {
+    var day = date.getDate();
+    var month = date.getMonth() + 1; // Lembre-se de adicionar 1, pois os meses começam de 0
+    var year = date.getFullYear();
+
+    // Adiciona um zero à esquerda se o dia ou mês for menor que 10
+    day = day < 10 ? '0' + day : day;
+    month = month < 10 ? '0' + month : month;
+
+    return year + '-' + month + '-' + day;
+}
     </script>
 </body>
 
