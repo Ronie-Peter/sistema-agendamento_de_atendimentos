@@ -34,7 +34,11 @@ CREATE TABLE `events` (
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `description` varchar(150) NOT NULL,
+  `incharge` varchar(150) NOT NULL,
+  `ordinance` varchar(150) NOT NULL,
+  `term` date NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `e-mail` varchar(255) NOT NULL,
   `dataCadastro` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

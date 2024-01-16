@@ -146,7 +146,7 @@ mysqli_close($conn);
             <div class="modal-content">
                 <!-- Título do modal -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Solicitar espaço</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Informações de Agendamento</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -220,9 +220,37 @@ mysqli_close($conn);
                             </div> -->
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Detalhes: </label>
+                            <label class="col-sm-2 col-form-label">Responsável</label>
                             <div class="col-sm-10">
-                                <input type="text" name="description" class="form-control" id="description" placeholder="Nº matrícula, atividade a ser realizada..." required="required">
+                                <input type="text" name="incharge" class="form-control" id="incharge" placeholder="Nome do encarregado" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Portaria</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="ordinance" class="form-control" id="ordinance" placeholder="Objeto da Portaria" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Data limite</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="term" class="form-control" id="term" placeholder="Data de vencimento do procedimento" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Telefone</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Telefone do setor" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">E-mail</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="e-mail" class="form-control" id="e-mail" placeholder="Ex.: sissaj@hotmail.com" required="required">
                             </div>
                         </div>
 
