@@ -33,7 +33,7 @@ CREATE TABLE `events` (
   `color` varchar(15) NOT NULL,
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
-  `description` varchar(255) NOT NULL,
+  `responsible` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `ordinance` varchar(150) NOT NULL,
   `term` date NOT NULL,

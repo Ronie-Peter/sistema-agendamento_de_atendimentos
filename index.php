@@ -222,7 +222,7 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Responsável</label>
                             <div class="col-sm-10">
-                                <input type="text" name="description" class="form-control" id="description" placeholder="Nome do encarregado" required="required">
+                                <input type="text" name="responsible" class="form-control" id="responsible" placeholder="Nome do encarregado" required="required">
                             </div>
                         </div>
 
@@ -384,8 +384,8 @@ mysqli_close($conn);
                     $('#visualizar #start').val(info.event.start.toLocaleString());
                     $('#visualizar #end').text(info.event.end.toLocaleString());
                     $('#visualizar #end').val(info.event.end.toLocaleString());
-                    $('#visualizar #description').text(info.event.extendedProps.description);
-                    $('#visualizar #description').val(info.event.extendedProps.description);
+                    $('#visualizar #responsible').text(info.event.extendedProps.responsible);
+                    $('#visualizar #responsible').val(info.event.extendedProps.responsible);
                     $('#visualizar #color').val(info.event.backgroundColor);
                     $('#visualizar').modal('show');
 
