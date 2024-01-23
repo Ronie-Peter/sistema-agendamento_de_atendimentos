@@ -222,7 +222,7 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Responsável</label>
                             <div class="col-sm-10">
-                                <input type="text" name="responsible" class="form-control" id="responsible" placeholder="Nome do encarregado" required="required">
+                                <input type="text" name="responsible" class="form-control" id="responsible" placeholder="Nome do encarregado" pattern="[a-zA-ZÀ-ú\s]+" title="Apenas letras maiúsculas e minúsculas, espaços e caracteres acentuados." required="required">
                             </div>
                         </div>
 
@@ -236,14 +236,15 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Data limite</label>
                             <div class="col-sm-10">
-                                <input type="text" name="term" class="form-control" id="term" placeholder="Data de vencimento do procedimento" required="required">
+                                <input type="date" name="term" class="form-control" id="term" placeholder="Data de vencimento do procedimento" required="required">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Telefone</label>
                             <div class="col-sm-10">
-                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Telefone do setor" required="required">
+                                <input type="tel" name="phone" class="form-control" id="phone" placeholder="+55 00 00000-0000" required="required" pattern="\+55 \d{2} \d{5}-\d{4}" title="Digite um número de telefone válido">
+                                <small id="phoneHelp" class="form-text text-muted">Formato: +55 XX XXXXX-XXXX</small>
                             </div>
                         </div>
 
@@ -364,9 +365,6 @@ mysqli_close($conn);
 
                     // Atualiza o valor do input do tipo date com a data formatada
 
-
-
-
                     $('#cadastrar #start').val(info.start.toLocaleString());
                     $('#cadastrar #end').val(info.end.toLocaleString());
                     $('#date').val(formattedDate);
@@ -409,6 +407,21 @@ mysqli_close($conn);
             return year + '-' + month + '-' + day;
         }
     </script>
+
+    <script>
+        document.getElementById('phone').addEventListener('input', function (e) {
+            let input = e.target;
+            let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+
+            // Formatar o número de telefone
+            if (value.length > 2) {
+                value = '+55 ' + value.substring(2, 4) + ' ' + value.substring(4, 9) + '-' + value.substring(9, 13);
+            }
+
+            input.value = value;
+        });
+    </script>
+
 </body>
 
 </html>
