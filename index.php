@@ -222,7 +222,7 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Responsável</label>
                             <div class="col-sm-10">
-                                <input type="text" name="incharge" class="form-control" id="incharge" placeholder="Nome do encarregado" required="required">
+                                <input type="text" name="description" class="form-control" id="description" placeholder="Nome do encarregado" required="required">
                             </div>
                         </div>
 
@@ -250,7 +250,7 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input type="text" name="e-mail" class="form-control" id="e-mail" placeholder="Ex.: sissaj@hotmail.com" required="required">
+                                <input type="text" name="email" class="form-control" id="email" placeholder="Ex.: sissaj@hotmail.com" required="required">
                             </div>
                         </div>
 
@@ -264,6 +264,7 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
+    
     <script>
         // Função para preencher os horários no formato desejado
         function populateTimes() {
@@ -285,6 +286,7 @@ mysqli_close($conn);
 
         // Chama a função para preencher os horários ao carregar a página
         document.addEventListener('DOMContentLoaded', populateTimes);
+    
     </script>
     <!-- FullCalendar Scripts -->
     <script src='./js/core.js'></script>
@@ -354,14 +356,14 @@ mysqli_close($conn);
                 },
                 /* Instruções javascript - tratamento e recebimento das informações do banco de dados do evento */
 
-                
+
                 select: function(info) {
 
                     var selectedDate = info.start; // A data de início da seleção
                     var formattedDate = formatDate(selectedDate);
 
                     // Atualiza o valor do input do tipo date com a data formatada
-                   
+
 
 
 
@@ -369,7 +371,7 @@ mysqli_close($conn);
                     $('#cadastrar #end').val(info.end.toLocaleString());
                     $('#date').val(formattedDate);
                     $('#cadastrar').modal('show');
-                
+
                 },
                 eventClick: function(info) {
                     info.jsEvent.preventDefault();
@@ -387,7 +389,7 @@ mysqli_close($conn);
                     $('#visualizar #color').val(info.event.backgroundColor);
                     $('#visualizar').modal('show');
 
-                    
+
                 },
             });
             /* Renderização do calendario */
@@ -395,17 +397,17 @@ mysqli_close($conn);
         });
 
         // Função para formatar a data como "YYYY-MM-DD"
-function formatDate(date) {
-    var day = date.getDate();
-    var month = date.getMonth() + 1; // Lembre-se de adicionar 1, pois os meses começam de 0
-    var year = date.getFullYear();
+        function formatDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1; // Lembre-se de adicionar 1, pois os meses começam de 0
+            var year = date.getFullYear();
 
-    // Adiciona um zero à esquerda se o dia ou mês for menor que 10
-    day = day < 10 ? '0' + day : day;
-    month = month < 10 ? '0' + month : month;
+            // Adiciona um zero à esquerda se o dia ou mês for menor que 10
+            day = day < 10 ? '0' + day : day;
+            month = month < 10 ? '0' + month : month;
 
-    return year + '-' + month + '-' + day;
-}
+            return year + '-' + month + '-' + day;
+        }
     </script>
 </body>
 

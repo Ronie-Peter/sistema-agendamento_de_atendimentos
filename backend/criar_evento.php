@@ -59,9 +59,9 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
             ];
         } else {
             // Cria um statement de criação do MySQL, prepara para execução e atribui os parâmetros coletados no formulário corretamente
-            $query = "INSERT INTO events (title, color, start, end, description, status, dataCadastro) VALUES (?, '#FFD700', ?, ?, ?, false, now())";
+            $query = "INSERT INTO events (title, color, start, end, description, status, ordinance, term, phone, email, dataCadastro) VALUES (?, '#FFD700', ?, ?, ?, false, ?, ?, ?, ?, now())";
             $stmt = mysqli_prepare($conn, $query);
-            mysqli_stmt_bind_param($stmt, "ssss", $dados['title'], $data_start_conv, $data_end_conv, $dados['description']);
+            mysqli_stmt_bind_param($stmt, "ssssssss", $dados['title'], $data_start_conv, $data_end_conv, $dados['description'], $dados['ordinance'], $dados['term'], $dados['phone'], $dados['email']);
             // Executa o statement de criação do MySQL e emite um alerta na tela para função realizada com sucesso ou erro
 
             if ($stmt->execute()) {
