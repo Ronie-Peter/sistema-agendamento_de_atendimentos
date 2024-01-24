@@ -26,6 +26,8 @@ mysqli_close($conn);
     <link href='./css/list.css' rel='stylesheet' />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-v0uzdbpdPuz1ivz9/7x5XM7zBRRK/q0f9bMLbzpI1hxEw4XNKjpb4Qx5t5Bq9EX3" crossorigin="anonymous">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <!-- Ícone UFAC -->
@@ -266,6 +268,30 @@ mysqli_close($conn);
             </div>
         </div>
     </div>
+
+    <!-- Modal Informativo -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel"><strong>Informações Importantes</strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos sindicantes, encarregados de IPM e escrivães.</p>
+                    <p><i class="fas fa-check-circle"></i> O agendamento poderá ser cancelado até 1 (uma) hora antes do atendimento.</p>
+                    <p><i class="fas fa-check-circle"></i> Explore as áreas “Informações” e “Materiais” para acesso a ferramentas de apoio.</p>
+                    <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou Ciente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     
     <script>
         // Função para preencher os horários no formato desejado
@@ -420,6 +446,19 @@ mysqli_close($conn);
             }
 
             input.value = value;
+        });
+    </script>
+
+    <!-- Script para mostrar a mensagem informativa ao carregar a página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostra o modal informativo
+            $('#infoModal').modal('show');
+
+            // Evento para ocultar o modal ao clicar no botão "Estou ciente"
+            $('#btnIamAware').click(function() {
+                $('#infoModal').modal('hide');
+            });
         });
     </script>
 
