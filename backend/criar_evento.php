@@ -22,6 +22,18 @@ include_once "conexao.php";
 session_start();
 /* Coleta os dados do evento que o modal captura e envia */
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+// Validando o e-mail
+if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+    $retorna = [
+        'sit' => false,
+        'msg' => '<div class="alert alert-danger" role="alert">O e-mail inserido não é válido. Por favor, insira um e-mail válido.</div>'
+    ];
+    header('Content-Type: application/json');
+    echo json_encode($retorna);
+    exit; // Encerra a execução se o e-mail não for válido
+}
+
 /* Conversão - data/hora do formato brasileiro para o formato do Banco de Dados */
 
 $dataHoraAgendamento = $dados['date'] . ' ' . $dados['start'];

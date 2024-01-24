@@ -61,18 +61,18 @@
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-left">
                         <div class="col-lg-10" id='calendar'>
-                            <h2 class="fw-bolder">Sistema de agendamento de espaços da Universidade Federal do Acre</h2>
-                            <p class="lead fw-normal text-muted mb-0">Para solicitar o uso de um espaço, clique em qualquer dia no calendário, preencha o formulário e aguarde a aprovação do administrador.</p>
-                            <p class="lead fw-normal text-muted mb-0">Solicitações com aprovação pendente estão no calendário em cor <span style="color: #FFD700">amarela</span> e as aprovadas estão em <span style="color: #00D100">verde</span>.</p>
-                            <p class="lead fw-normal text-muted mb-0">Elaborado pelos alunos do curso de Sistemas de Informação, Felipe Bezerra Lima e Victor Alexandre Lima Ribeiro, e supervisionado pelo professor Frederico Tavares.</p>
+                            <h2 class="fw-bolder"><strong>Assessoria de Apoio para Assuntos Jurídicos</strong></h2>
+                            <p class="lead fw-normal text-muted mb-0">Página em construção...</p>
+                            <!-- <p class="lead fw-normal text-muted mb-0">Solicitações com aprovação pendente estão no calendário em cor <span style="color: #FFD700">amarela</span> e as aprovadas estão em <span style="color: #00D100">verde</span>.</p> -->
                             <br>
-                            <h4 class="fw-bolder">Contato:</h4>
-                            <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/Bezerha">github.com/Bezerha</a></p>
+                            <h4 class="fw-bolder">Documentos Importantes</h4>
+                            <p class="lead fw-normal text-muted mb-0">Página em construção...</p>
+                            <!-- <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/Bezerha">github.com/Bezerha</a></p>
                             <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/vyctor922">github.com/vyctor922</a></p>
-                            <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/fredtavares2018">github.com/fredtavares2018</a></p>
+                            <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/fredtavares2018">github.com/fredtavares2018</a></p> -->
                             <br>
-                            <h4 class="fw-bolder">Versão:</h4>
-                            <p class="lead fw-normal text-muted mb-0">2.3.5</p>
+                            <!-- <h4 class="fw-bolder">Versão:</h4>
+                            <p class="lead fw-normal text-muted mb-0">2.3.5</p> -->
                         </div>
                     </div>
                 </div>

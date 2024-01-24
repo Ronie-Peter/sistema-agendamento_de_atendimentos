@@ -96,7 +96,7 @@ mysqli_close($conn);
             <!-- Carregamento do calendário -->
             <div style="text-align: center;">
                 <p>
-                <h1>Assessoramento para Sindicantes e Encarregados de IPM</h1>
+                <h1><strong>Assessoramento para Sindicantes e Encarregados de IPM</strong></h1>
                 </p>
             </div>
             <div id='calendar'></div>
@@ -243,7 +243,7 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Telefone</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="phone" class="form-control" id="phone" placeholder="+55 00 00000-0000" required="required" pattern="\+55 \d{2} \d{5}-\d{4}" title="Digite um número de telefone válido">
+                                <input type="tel" name="phone" class="form-control" id="phone" value="+55 " placeholder="00 00000-0000" required="required" pattern="\+55 \d{2} \d{5}-\d{4}" title="Digite um número de telefone válido">
                                 <small id="phoneHelp" class="form-text text-muted">Formato: +55 XX XXXXX-XXXX</small>
                             </div>
                         </div>
@@ -251,7 +251,8 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input type="text" name="email" class="form-control" id="email" placeholder="Ex.: sissaj@hotmail.com" required="required">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Ex.: sissaj@hotmail.com" required="required">
+                                <small id="emailHelp" class="form-text text-muted">Digite um e-mail válido.</small>
                             </div>
                         </div>
 
@@ -413,7 +414,7 @@ mysqli_close($conn);
             let input = e.target;
             let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
 
-            // Formatar o número de telefone
+            // Adiciona a parte fixa do número e formata o restante
             if (value.length > 2) {
                 value = '+55 ' + value.substring(2, 4) + ' ' + value.substring(4, 9) + '-' + value.substring(9, 13);
             }
