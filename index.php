@@ -279,10 +279,12 @@ mysqli_close($conn);
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body custom-modal-body">
                     <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos sindicantes, encarregados de IPM e escrivães.</p>
                     <p><i class="fas fa-check-circle"></i> O agendamento poderá ser cancelado até 1 (uma) hora antes do atendimento.</p>
-                    <p><i class="fas fa-check-circle"></i> Explore as áreas “Informações” e “Materiais” para acesso a ferramentas de apoio.</p>
+                    <p><i class="fas fa-check-circle"></i> Explore as áreas <span class="underline-text">"Informações"</span> e <span class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação pendente estão no calendário em cor <span class="custom-box custom-box-yellow">amarelo.</span></p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação aprovada estão no calendário em cor <span class="custom-box custom-box-green">verde.</span></p>
                     <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
                 </div>
                 <div class="modal-footer">

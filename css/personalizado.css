@@ -303,3 +303,32 @@ ul ul a {
     }
 
 }
+
+/* ---------------------------------------------------
+    MODAL DE INFORMAÇÕES
+----------------------------------------------------- */
+
+    .custom-modal-body p {
+        color: #2C3E50 !important;
+        font-weight: bold;
+    }
+
+    .custom-box {
+        display: inline-block;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .custom-box-yellow {
+        background-color: #FFD700;
+        color: #2C3E50;
+    }
+
+    .custom-box-green {
+        background-color: #00D100;
+        color: #2C3E50;
+    }
+
+    .underline-text {
+        border-bottom: 2px solid #2C3E50;
+    }
