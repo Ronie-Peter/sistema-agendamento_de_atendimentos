@@ -34,7 +34,7 @@
                 </div>
                 <!-- SubMenu contendo os filtros de visaalização da pagina -->
                 <ul class="list-unstyled components">
-                    <p style="text-align: center;">Assessoria Jurídica - HCE</p>
+                    <p style="text-align: center;">Assessoria Jurídica | HCE</p>
                     <li>
                         <a href="index.php"><i class="fa fa-home"></i> Página Inicial</a>
                     </li>

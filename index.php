@@ -25,13 +25,17 @@ mysqli_close($conn);
     <link href='./css/daygrid.css' rel='stylesheet' />
     <link href='./css/list.css' rel='stylesheet' />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-v0uzdbpdPuz1ivz9/7x5XM7zBRRK/q0f9bMLbzpI1hxEw4XNKjpb4Qx5t5Bq9EX3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha384-v0uzdbpdPuz1ivz9/7x5XM7zBRRK/q0f9bMLbzpI1hxEw4XNKjpb4Qx5t5Bq9EX3" crossorigin="anonymous">
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <!-- Ícone UFAC -->
-    <link rel="shortcut icon" type="image/x-icon" href="https://sistemas.ufac.br/home/wp-content/themes/sistemas/staticIndex/imagens/logo_ufac.gif">
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://sistemas.ufac.br/home/wp-content/themes/sistemas/staticIndex/imagens/logo_ufac.gif">
     <!-- Formatação personalizada usando CSS -->
     <link href='./css/personalizado.css' rel='stylesheet'>
 </head>
@@ -107,14 +111,16 @@ mysqli_close($conn);
                 <div class="container">
                     <div class="text-center">
                         <span>Hospital Central do Exército<br>
-                            <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e Comunicação</span>
+                            <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e
+                                Comunicação</span>
                     </div>
                 </div>
             </footer>
         </div>
     </div>
     <!-- Modal de visualização dos detalhes do evento -->
-    <div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <!-- Título do modal -->
@@ -143,7 +149,8 @@ mysqli_close($conn);
         </div>
     </div>
     <!-- Modal de criação do evento -->
-    <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <!-- Título do modal -->
@@ -161,7 +168,8 @@ mysqli_close($conn);
                             <label class="col-sm-2 col-form-label">Categoria</label>
                             <div class="col-sm-10">
                                 <select name="title" class="form-control" id="title" required="required">
-                                    <option value="" disabled selected hidden>Selecione uma categoria para atendimento</option>
+                                    <option value="" disabled selected hidden>Selecione uma categoria para atendimento
+                                    </option>
 
                                     <optgroup label="Categoria do Atendimento">
                                         <option value="IPM">IPM</option>
@@ -224,28 +232,35 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Responsável</label>
                             <div class="col-sm-10">
-                                <input type="text" name="responsible" class="form-control" id="responsible" placeholder="Nome do encarregado" pattern="[a-zA-ZÀ-ú\s]+" title="Apenas letras maiúsculas e minúsculas, espaços e caracteres acentuados." required="required">
+                                <input type="text" name="responsible" class="form-control" id="responsible"
+                                    placeholder="Nome do encarregado" pattern="[a-zA-ZÀ-ú\s]+"
+                                    title="Apenas letras maiúsculas e minúsculas, espaços e caracteres acentuados."
+                                    required="required">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Portaria</label>
                             <div class="col-sm-10">
-                                <input type="text" name="ordinance" class="form-control" id="ordinance" placeholder="Objeto da Portaria" required="required">
+                                <input type="text" name="ordinance" class="form-control" id="ordinance"
+                                    placeholder="Objeto da Portaria" required="required">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Data limite</label>
                             <div class="col-sm-10">
-                                <input type="date" name="term" class="form-control" id="term" placeholder="Data de vencimento do procedimento" required="required">
+                                <input type="date" name="term" class="form-control" id="term"
+                                    placeholder="Data de vencimento do procedimento" required="required">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Telefone</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="phone" class="form-control" id="phone" value="+55 " placeholder="00 00000-0000" required="required" pattern="\+55 \d{2} \d{5}-\d{4}" title="Digite um número de telefone válido">
+                                <input type="tel" name="phone" class="form-control" id="phone" value="+55 "
+                                    placeholder="00 00000-0000" required="required" pattern="\+55 \d{2} \d{5}-\d{4}"
+                                    title="Digite um número de telefone válido">
                                 <small id="phoneHelp" class="form-text text-muted">Formato: +55 XX XXXXX-XXXX</small>
                             </div>
                         </div>
@@ -253,14 +268,16 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">E-mail</label>
                             <div class="col-sm-10">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Ex.: sissaj@hotmail.com" required="required">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="Ex.: sissaj@hotmail.com" required="required">
                                 <small id="emailHelp" class="form-text text-muted">Digite um e-mail válido.</small>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <button type="submit" name="AddEvent" id="AddEvent" value="AddEvent" class="btn btn-success">Solicitar</button>
+                                <button type="submit" name="AddEvent" id="AddEvent" value="AddEvent"
+                                    class="btn btn-success">Solicitar</button>
                             </div>
                         </div>
                     </form>
@@ -270,7 +287,8 @@ mysqli_close($conn);
     </div>
 
     <!-- Modal Informativo -->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -280,21 +298,28 @@ mysqli_close($conn);
                     </button>
                 </div>
                 <div class="modal-body custom-modal-body">
-                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos sindicantes, encarregados de IPM e escrivães.</p>
-                    <p><i class="fas fa-check-circle"></i> O agendamento poderá ser cancelado até 1 (uma) hora antes do atendimento.</p>
-                    <p><i class="fas fa-check-circle"></i> Explore as áreas <span class="underline-text">"Informações"</span> e <span class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação pendente estão no calendário em cor <span class="custom-box custom-box-yellow">amarelo.</span></p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação aprovada estão no calendário em cor <span class="custom-box custom-box-green">verde.</span></p>
+                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos sindicantes, encarregados
+                        de IPM e escrivães.</p>
+                    <p><i class="fas fa-check-circle"></i> O agendamento poderá ser cancelado até 1 (uma) hora antes do
+                        atendimento.</p>
+                    <p><i class="fas fa-check-circle"></i> Explore as áreas <span
+                            class="underline-text">"Informações"</span> e <span
+                            class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação pendente estão no calendário em
+                        cor <span class="custom-box custom-box-yellow">amarelo.</span></p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação aprovada estão no calendário em
+                        cor <span class="custom-box custom-box-green">verde.</span></p>
                     <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou Ciente</button>
+                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou
+                        Ciente</button>
                 </div>
             </div>
         </div>
     </div>
 
-    
+
     <script>
         // Função para preencher os horários no formato desejado
         function populateTimes() {
@@ -316,7 +341,7 @@ mysqli_close($conn);
 
         // Chama a função para preencher os horários ao carregar a página
         document.addEventListener('DOMContentLoaded', populateTimes);
-    
+
     </script>
     <!-- FullCalendar Scripts -->
     <script src='./js/core.js'></script>
@@ -328,12 +353,20 @@ mysqli_close($conn);
     <!-- JQuery Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Popper Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
     <!-- Bootstrap Script -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <!-- FontAwesome Scripts -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
     <!-- Scripts personalizados -->
     <script src="js/personalizado.js"></script>
     <!-- Instrução JavaScript para atualizar ano vigente no footer -->
@@ -343,7 +376,7 @@ mysqli_close($conn);
         yearElement.textContent = ` ${currentYear}`;
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
 
             /* Instruções javascript - carregamento personalizado do calendário */
             var calendarEl = document.getElementById('calendar');
@@ -361,25 +394,25 @@ mysqli_close($conn);
                 /* Filtragem da escolha de visualização dos eventos */
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
-                ?>
-                    events: './backend/listar_eventos.php',
-                <?php
+                    ?>
+                            events: './backend/listar_eventos.php',
+                    <?php
                 } elseif ($_GET['cod'] == 1) {
-                ?>
-                    events: './backend/listar_eventos-1.php',
-                <?php
+                    ?>
+                            events: './backend/listar_eventos-1.php',
+                    <?php
                 } elseif ($_GET['cod'] == 2) {
-                ?>
-                    events: './backend/listar_eventos-2.php',
-                <?php
+                    ?>
+                            events: './backend/listar_eventos-2.php',
+                    <?php
                 } elseif ($_GET['cod'] == 3) {
-                ?>
-                    events: './backend/listar_eventos-3.php',
-                <?php
+                    ?>
+                            events: './backend/listar_eventos-3.php',
+                    <?php
                 }
                 ?>
                 /* Tratamento de erros */
-                extraParams: function() {
+                extraParams: function () {
                     return {
                         cachebuster: new Date().valueOf()
                     };
@@ -387,7 +420,7 @@ mysqli_close($conn);
                 /* Instruções javascript - tratamento e recebimento das informações do banco de dados do evento */
 
 
-                select: function(info) {
+                select: function (info) {
 
                     var selectedDate = info.start; // A data de início da seleção
                     var formattedDate = formatDate(selectedDate);
@@ -400,7 +433,7 @@ mysqli_close($conn);
                     $('#cadastrar').modal('show');
 
                 },
-                eventClick: function(info) {
+                eventClick: function (info) {
                     info.jsEvent.preventDefault();
                     $("#apagar_evento").attr("href", "./backend/deletar_evento.php?id=" + info.event.id);
                     $('#visualizar #id').text(info.event.id);
@@ -453,12 +486,12 @@ mysqli_close($conn);
 
     <!-- Script para mostrar a mensagem informativa ao carregar a página -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mostra o modal informativo
             $('#infoModal').modal('show');
 
             // Evento para ocultar o modal ao clicar no botão "Estou ciente"
-            $('#btnIamAware').click(function() {
+            $('#btnIamAware').click(function () {
                 $('#infoModal').modal('hide');
             });
         });
