@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+
+// Ativar exibição de erros
+ini_set('display_errors', 1);
 // Definição dos horários de início e fim desejados
 $startTime = strtotime('07:30');
 $endTime = strtotime('12:00');
