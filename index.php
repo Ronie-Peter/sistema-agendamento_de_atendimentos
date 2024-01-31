@@ -435,6 +435,10 @@ mysqli_close($conn);
                 },
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
+
+                    // var selectedDate = info.start; // A data de início da seleção
+                    // var formattedDate = formatDate(selectedDate);
+                    // $('#date').val(formattedDate);
                     $("#apagar_evento").attr("href", "./backend/deletar_evento.php?id=" + info.event.id);
                     $('#visualizar #id').text(info.event.id);
                     $('#visualizar #id').val(info.event.id);
@@ -449,6 +453,13 @@ mysqli_close($conn);
                     $('#visualizar #color').val(info.event.backgroundColor);
                     $('#visualizar').modal('show');
 
+                   
+                    // Atualiza o valor do input do tipo date com a data formatada
+
+                    // $('#cadastrar #start').val(info.start.toLocaleString());
+                    // $('#cadastrar #end').val(info.end.toLocaleString());
+                    // $('#date').val(formattedDate);
+                    // $('#cadastrar').modal('show');
 
                 },
             });
