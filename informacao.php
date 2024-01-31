@@ -62,11 +62,11 @@
                     <div class="row gx-5 align-items-left">
                         <div class="col-lg-10" id='calendar'>
                             <h2 class="fw-bolder"><strong>Assessoria de Apoio para Assuntos Jurídicos</strong></h2>
-                            <p class="lead fw-normal text-muted mb-0">Página em construção...</p>
+                            <p class="lead fw-normal text-muted mb-0">Página em construção!</p>
                             <!-- <p class="lead fw-normal text-muted mb-0">Solicitações com aprovação pendente estão no calendário em cor <span style="color: #FFD700">amarela</span> e as aprovadas estão em <span style="color: #00D100">verde</span>.</p> -->
                             <br>
                             <h4 class="fw-bolder">Contatos</h4>
-                            <p class="lead fw-normal text-muted mb-0">Página em construção...</p>
+                            <p class="lead fw-normal text-muted mb-0">Página em construção!</p>
                             <!-- <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/Bezerha">github.com/Bezerha</a></p>
                             <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/vyctor922">github.com/vyctor922</a></p>
                             <p class="lead fw-normal text-muted mb-0"><a href="https://github.com/fredtavares2018">github.com/fredtavares2018</a></p> -->

@@ -102,14 +102,14 @@ mysqli_close($conn);
             <!-- Carregamento do calendário -->
             <div style="text-align: center;">
                 <p>
-                <h1><strong>Assessoramento para Sindicantes e Encarregados de IPM</strong></h1>
+                <h1><strong>Assessoramento para Sindicantes e<br>Encarregados de IPM</strong></h1>
                 </p>
             </div>
             <div id='calendar'></div>
             <!-- Rodapé da pagina -->
-            <footer class="main-footer p-4 mt-5">
+            <footer class="main-footer p-4 mt-5 text-center">
                 <div class="container">
-                    <div class="text-center">
+                    <div>
                         <span>Hospital Central do Exército<br>
                             <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e
                                 Comunicação</span>
@@ -118,30 +118,39 @@ mysqli_close($conn);
             </footer>
         </div>
     </div>
-    <!-- Modal de visualização dos detalhes do evento -->
+    <!-- Modal de visualização dos detalhes do agendamento -->
     <div class="modal fade" id="visualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <!-- Título do modal -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detalhes do evento</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Detalhes do agendamento</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <!-- Visualização dos detalhes do evento -->
+                <!-- Visualização dos detalhes do agendamento -->
                 <div class="modal-body">
                     <div class="visevent">
                         <dl class="row">
-                            <dt class="col-sm-3">Espaço solicitado:</dt>
+                            <dt class="col-sm-3">Categoria:</dt>
                             <dd class="col-sm-9" id="title"></dd>
 
-                            <dt class="col-sm-3">Início da reserva:</dt>
+                            <dt class="col-sm-3">Data da reserva:</dt>
+                            <dd class="col-sm-9" id="date"></dd>
+
+                            <dt class="col-sm-3">Hora da reserva:</dt>
                             <dd class="col-sm-9" id="start"></dd>
 
-                            <dt class="col-sm-3">Fim da reserva:</dt>
-                            <dd class="col-sm-9" id="end"></dd>
+                            <dt class="col-sm-3">Responsável:</dt>
+                            <dd class="col-sm-9" id="responsible"></dd>
+
+                            <dt class="col-sm-3">Telefone:</dt>
+                            <dd class="col-sm-9" id="phone"></dd>
+
+                            <dt class="col-sm-3">E-mail:</dt>
+                            <dd class="col-sm-9" id="email"></dd>
                         </dl>
                     </div>
                 </div>
@@ -395,19 +404,19 @@ mysqli_close($conn);
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
                     ?>
-                            events: './backend/listar_eventos.php',
+                                events: './backend/listar_eventos.php',
                     <?php
                 } elseif ($_GET['cod'] == 1) {
                     ?>
-                            events: './backend/listar_eventos-1.php',
+                                events: './backend/listar_eventos-1.php',
                     <?php
                 } elseif ($_GET['cod'] == 2) {
                     ?>
-                            events: './backend/listar_eventos-2.php',
+                                events: './backend/listar_eventos-2.php',
                     <?php
                 } elseif ($_GET['cod'] == 3) {
                     ?>
-                            events: './backend/listar_eventos-3.php',
+                                events: './backend/listar_eventos-3.php',
                     <?php
                 }
                 ?>
@@ -435,31 +444,14 @@ mysqli_close($conn);
                 },
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
-
-                    // var selectedDate = info.start; // A data de início da seleção
-                    // var formattedDate = formatDate(selectedDate);
-                    // $('#date').val(formattedDate);
-                    $("#apagar_evento").attr("href", "./backend/deletar_evento.php?id=" + info.event.id);
-                    $('#visualizar #id').text(info.event.id);
-                    $('#visualizar #id').val(info.event.id);
                     $('#visualizar #title').text(info.event.title);
-                    $('#visualizar #title').val(info.event.title);
-                    $('#visualizar #start').text(info.event.start.toLocaleString());
-                    $('#visualizar #start').val(info.event.start.toLocaleString());
-                    $('#visualizar #end').text(info.event.end.toLocaleString());
-                    $('#visualizar #end').val(info.event.end.toLocaleString());
-                    $('#visualizar #responsible').text(info.event.extendedProps.responsible);
-                    $('#visualizar #responsible').val(info.event.extendedProps.responsible);
-                    $('#visualizar #color').val(info.event.backgroundColor);
+                    $('#visualizar #date').text(info.event.start.toLocaleDateString());
+                    $('#visualizar #start').text(info.event.start.toLocaleTimeString());
+                    $('#visualizar #responsible').text(info.event.extendedProps.responsible);                    
+                    $('#visualizar #phone').text(info.event.extendedProps.phone || 'N/A');
+                    $('#visualizar #email').text(info.event.extendedProps.email || 'N/A');                    
                     $('#visualizar').modal('show');
 
-                   
-                    // Atualiza o valor do input do tipo date com a data formatada
-
-                    // $('#cadastrar #start').val(info.start.toLocaleString());
-                    // $('#cadastrar #end').val(info.end.toLocaleString());
-                    // $('#date').val(formattedDate);
-                    // $('#cadastrar').modal('show');
 
                 },
             });
