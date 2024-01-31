@@ -107,9 +107,9 @@ mysqli_close($conn);
             </div>
             <div id='calendar'></div>
             <!-- Rodapé da pagina -->
-            <footer class="main-footer p-4 mt-5">
+            <footer class="main-footer p-4 mt-5 text-center">
                 <div class="container">
-                    <div class="text-center">
+                    <div>
                         <span>Hospital Central do Exército<br>
                             <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e
                                 Comunicação</span>
