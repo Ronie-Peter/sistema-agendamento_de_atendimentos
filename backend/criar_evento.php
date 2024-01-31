@@ -1,8 +1,4 @@
 <?php
-error_reporting(E_ALL);
-
-// Ativar exibição de erros
-ini_set('display_errors', 1);
 // Definição dos horários de início e fim desejados
 $startTime = strtotime('07:30');
 $endTime = strtotime('12:00');
@@ -73,9 +69,7 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
                 'sit' => false,
                 'msg' => '<div class="alert alert-danger" role="alert">Horário indisponível. Reserve um horário diferente.</div>'
             ];
-        } else {
-            
-            print_r($dados); die;
+        } else {          
 
             // Cria um statement de criação do MySQL, prepara para execução e atribui os parâmetros coletados no formulário corretamente
             $query = "INSERT INTO events (title, color, start, end, responsible, status, ordinance, term, phone, email, dataCadastro) VALUES (?, '#FFD700', ?, ?, ?, false, ?, ?, ?, ?, now())";
@@ -84,18 +78,7 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
             mysqli_stmt_bind_param($stmt, "ssssssss", $dados['title'], $data_start_conv, $data_end_conv, $dados['responsible'], $dados['ordinance'], $dados['term'], $dados['phone'], $dados['email']);
             // Executa o statement de criação do MySQL e emite um alerta na tela para função realizada com sucesso ou erro
 
-
-            try{
-                $data = $stmt->execute();
-            }catch(Exception $e){
-                echo $e->getMessage();
-                die();
-            }
-
-            
-
-
-            if ($data) {
+            if ($stmt->execute()) {
                 $retorna = [
                     'sit' => true,
                     'msg' => '<div class="alert alert-success" role="alert">Atendimento agendado com sucesso!</div>'

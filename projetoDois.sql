@@ -10,7 +10,9 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+create database projetodois;
 
+use DATABASE projetodois;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +39,7 @@ CREATE TABLE `events` (
   `status` tinyint(1) NOT NULL,
   `ordinance` varchar(150) NOT NULL,
   `term` date NOT NULL,
-  `phone` varchar(15) NOT NULL,
+  `phone` varchar(17) NOT NULL,
   `email` varchar(255) NOT NULL,
   `dataCadastro` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
