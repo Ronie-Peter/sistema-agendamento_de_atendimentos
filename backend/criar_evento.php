@@ -76,7 +76,18 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
             mysqli_stmt_bind_param($stmt, "ssssssss", $dados['title'], $data_start_conv, $data_end_conv, $dados['responsible'], $dados['ordinance'], $dados['term'], $dados['phone'], $dados['email']);
             // Executa o statement de criação do MySQL e emite um alerta na tela para função realizada com sucesso ou erro
 
-            if ($stmt->execute()) {
+
+            try{
+                $data = $stmt->execute();
+            }catch(Exception $e){
+                echo $e->getMessage();
+                die();
+            }
+
+            
+
+
+            if ($data) {
                 $retorna = [
                     'sit' => true,
                     'msg' => '<div class="alert alert-success" role="alert">Atendimento agendado com sucesso!</div>'
