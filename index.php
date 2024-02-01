@@ -404,19 +404,19 @@ mysqli_close($conn);
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
                     ?>
-                                events: './backend/listar_eventos.php',
+                                        events: './backend/listar_eventos.php',
                     <?php
                 } elseif ($_GET['cod'] == 1) {
                     ?>
-                                events: './backend/listar_eventos-1.php',
+                                        events: './backend/listar_eventos-1.php',
                     <?php
                 } elseif ($_GET['cod'] == 2) {
                     ?>
-                                events: './backend/listar_eventos-2.php',
+                                        events: './backend/listar_eventos-2.php',
                     <?php
                 } elseif ($_GET['cod'] == 3) {
                     ?>
-                                events: './backend/listar_eventos-3.php',
+                                        events: './backend/listar_eventos-3.php',
                     <?php
                 }
                 ?>
@@ -447,9 +447,9 @@ mysqli_close($conn);
                     $('#visualizar #title').text(info.event.title);
                     $('#visualizar #date').text(info.event.start.toLocaleDateString());
                     $('#visualizar #start').text(info.event.start.toLocaleTimeString());
-                    $('#visualizar #responsible').text(info.event.extendedProps.responsible);                    
+                    $('#visualizar #responsible').text(info.event.extendedProps.responsible);
                     $('#visualizar #phone').text(info.event.extendedProps.phone || 'N/A');
-                    $('#visualizar #email').text(info.event.extendedProps.email || 'N/A');                    
+                    $('#visualizar #email').text(info.event.extendedProps.email || 'N/A');
                     $('#visualizar').modal('show');
                 },
             });
