@@ -64,7 +64,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `user`, `password`, `permission`, `dataCadastro`) VALUES
-(1, 'Administração', 'admin@admin.com', 'SenhaDaAdministracao', 1, '2021-12-27 21:22:04');
+(1, 'Administração', 'admin@admin.com', 'Estacio@123', 1, '2021-12-27 21:22:04');
 
 --
 -- Índices para tabelas despejadas
