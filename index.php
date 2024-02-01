@@ -426,14 +426,13 @@ mysqli_close($conn);
                         cachebuster: new Date().valueOf()
                     };
                 },
+                
                 /* Instruções javascript - tratamento e recebimento das informações do banco de dados do evento */
-
 
                 select: function (info) {
 
                     var selectedDate = info.start; // A data de início da seleção
                     var formattedDate = formatDate(selectedDate);
-                    console.log(formattedDate);
 
                     // Atualiza o valor do input do tipo date com a data formatada
 
@@ -446,14 +445,12 @@ mysqli_close($conn);
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
                     $('#visualizar #title').text(info.event.title);
-                    $('#visualizar #date-reservation').text(info.event.start.toLocaleDateString());
+                    $('#visualizar #date').text(info.event.start.toLocaleDateString());
                     $('#visualizar #start').text(info.event.start.toLocaleTimeString());
                     $('#visualizar #responsible').text(info.event.extendedProps.responsible);
                     $('#visualizar #phone').text(info.event.extendedProps.phone || 'N/A');
                     $('#visualizar #email').text(info.event.extendedProps.email || 'N/A');
                     $('#visualizar').modal('show');
-
-
                 },
             });
             /* Renderização do calendario */
