@@ -12,7 +12,7 @@
     if(!empty($id)) 
     {
        /* Cria um statement de atualização no MySQL, prepara para execução e atribui os parâmetros coletados no formulário corretamente */
-       $query = "UPDATE events SET color = '#c82333', status = 2 WHERE id=?";
+       $query = "UPDATE events SET color = '#FF6347', status = 2 WHERE id=?";
        $stmt = mysqli_prepare($conn, $query);
        mysqli_stmt_bind_param($stmt, "i", $id);
        /* Executa o statement de atualização no MySQL e emite um alerta na tela para função realizada com sucesso ou erro */

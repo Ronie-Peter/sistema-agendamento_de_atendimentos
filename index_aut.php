@@ -360,8 +360,6 @@ if (!isset($_SESSION['usuario'])) {
                 },
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
-                    var selectedDate = info.start; // A data de início da seleção
-                    var formattedDate = formatDate(selectedDate);
                     $('#start-reservation').val(formattedDate);
                     $("#apagar_evento").attr("href", "./backend/cancelar_evento.php?id=" + info.event.id);
                     $('#visualizar #id').text(info.event.id);
@@ -386,9 +384,11 @@ if (!isset($_SESSION['usuario'])) {
         });
 
         function formatDate(date) {
+            console.log(date)
             var day = date.getDate();
             var month = date.getMonth() + 1; // Lembre-se de adicionar 1, pois os meses começam de 0
             var year = date.getFullYear();
+            console.log(day)
 
             // Adiciona um zero à esquerda se o dia ou mês for menor que 10
             day = day < 10 ? '0' + day : day;
