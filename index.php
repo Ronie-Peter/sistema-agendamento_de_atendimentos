@@ -210,7 +210,7 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Data da reserva</label>
                             <div class="col-sm-10">
-                                <input type="date" name="date" class="form-control" id="date" required="required">
+                                <input type="date" name="date" class="form-control" id="date-reservation" required="required">
                             </div>
                         </div>
 
@@ -433,24 +433,27 @@ mysqli_close($conn);
 
                     var selectedDate = info.start; // A data de início da seleção
                     var formattedDate = formatDate(selectedDate);
+                    console.log(formattedDate);
 
                     // Atualiza o valor do input do tipo date com a data formatada
 
                     $('#cadastrar #start').val(info.start.toLocaleString());
                     $('#cadastrar #end').val(info.end.toLocaleString());
-                    $('#date').val(formattedDate);
+                    $('#date-reservation').val(formattedDate);
                     $('#cadastrar').modal('show');
 
                 },
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
                     $('#visualizar #title').text(info.event.title);
-                    $('#visualizar #date').text(info.event.start.toLocaleDateString());
+                    $('#visualizar #date-reservation').text(info.event.start.toLocaleDateString());
                     $('#visualizar #start').text(info.event.start.toLocaleTimeString());
                     $('#visualizar #responsible').text(info.event.extendedProps.responsible);
                     $('#visualizar #phone').text(info.event.extendedProps.phone || 'N/A');
                     $('#visualizar #email').text(info.event.extendedProps.email || 'N/A');
                     $('#visualizar').modal('show');
+
+
                 },
             });
             /* Renderização do calendario */

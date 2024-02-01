@@ -246,7 +246,7 @@ if (!isset($_SESSION['usuario'])) {
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Início da reserva: </label>
                             <div class="col-sm-10">
-                                <input type="datetime-local" name="start" class="form-control" id="start"
+                                <input type="date" name="start" class="form-control" id="start-reservation"
                                     required="required">
                             </div>
                         </div>
@@ -349,13 +349,21 @@ if (!isset($_SESSION['usuario'])) {
                 },
                 /* Instruções javascript - tratamento e recebimento das informações do banco de dados do evento */
                 select: function (info) {
+                    var selectedDate = info.start; // A data de início da seleção
+                    var formattedDate = formatDate(selectedDate);
+                    
+                    
                     $('#cadastrar #start').val(info.start.toLocaleString());
                     $('#cadastrar #end').val(info.end.toLocaleString());
+                    $('#start-reservation').val(formattedDate);
                     $('#cadastrar').modal('show');
                 },
                 eventClick: function (info) {
                     info.jsEvent.preventDefault();
-                    $("#apagar_evento").attr("href", "./backend/deletar_evento.php?id=" + info.event.id);
+                    var selectedDate = info.start; // A data de início da seleção
+                    var formattedDate = formatDate(selectedDate);
+                    $('#start-reservation').val(formattedDate);
+                    $("#apagar_evento").attr("href", "./backend/cancelar_evento.php?id=" + info.event.id);
                     $('#visualizar #id').text(info.event.id);
                     $('#visualizar #id').val(info.event.id);
                     $('#visualizar #title').text(info.event.title);
@@ -368,11 +376,26 @@ if (!isset($_SESSION['usuario'])) {
                     $('#visualizar #description').val(info.event.extendedProps.description);
                     $('#visualizar #color').val(info.event.backgroundColor);
                     $('#visualizar').modal('show');
+
+                    var selectedDate = info.start; // A data de início da seleção
+                    var formattedDate = formatDate(selectedDate);
                 },
             });
             /* Renderização do calendario */
             calendar.render();
         });
+
+        function formatDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1; // Lembre-se de adicionar 1, pois os meses começam de 0
+            var year = date.getFullYear();
+
+            // Adiciona um zero à esquerda se o dia ou mês for menor que 10
+            day = day < 10 ? '0' + day : day;
+            month = month < 10 ? '0' + month : month;
+
+            return year + '-' + month + '-' + day;
+        }
     </script>
 </body>
 
