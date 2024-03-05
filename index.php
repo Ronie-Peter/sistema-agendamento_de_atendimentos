@@ -210,7 +210,8 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Data da reserva</label>
                             <div class="col-sm-10">
-                                <input type="date" name="date" class="form-control" id="date-reservation" required="required">
+                                <input type="date" name="date" class="form-control" id="date-reservation"
+                                    required="required">
                             </div>
                         </div>
 
@@ -314,15 +315,16 @@ mysqli_close($conn);
                     <p><i class="fas fa-check-circle"></i> Explore as áreas <span
                             class="underline-text">"Informações"</span> e <span
                             class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação pendente estão no calendário em
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento pendente estão no calendário em
                         cor <span class="custom-box custom-box-yellow">amarelo.</span></p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com aprovação aprovada estão no calendário em
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento confirmado estão no calendário em
                         cor <span class="custom-box custom-box-green">verde.</span></p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento cancelado estão no calendário em
+                        cor <span class="custom-box custom-box-red">vermelho.</span></p>
                     <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou
-                        Ciente</button>
+                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou Ciente</button>
                 </div>
             </div>
         </div>
@@ -404,19 +406,19 @@ mysqli_close($conn);
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
                     ?>
-                                        events: './backend/listar_eventos.php',
+                                            events: './backend/listar_eventos.php',
                     <?php
                 } elseif ($_GET['cod'] == 1) {
                     ?>
-                                        events: './backend/listar_eventos-1.php',
+                                            events: './backend/listar_eventos-1.php',
                     <?php
                 } elseif ($_GET['cod'] == 2) {
                     ?>
-                                        events: './backend/listar_eventos-2.php',
+                                            events: './backend/listar_eventos-2.php',
                     <?php
                 } elseif ($_GET['cod'] == 3) {
                     ?>
-                                        events: './backend/listar_eventos-3.php',
+                                            events: './backend/listar_eventos-3.php',
                     <?php
                 }
                 ?>
@@ -426,7 +428,7 @@ mysqli_close($conn);
                         cachebuster: new Date().valueOf()
                     };
                 },
-                
+
                 /* Instruções javascript - tratamento e recebimento das informações do banco de dados do evento */
 
                 select: function (info) {
