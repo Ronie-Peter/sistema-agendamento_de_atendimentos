@@ -37,7 +37,7 @@ CREATE TABLE `events` (
   `end` datetime NOT NULL,
   `responsible` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `ordinance` varchar(150) NOT NULL,
+  `ordinance` varchar(2000) NOT NULL,
   `term` date NOT NULL,
   `phone` varchar(17) NOT NULL,
   `email` varchar(255) NOT NULL,

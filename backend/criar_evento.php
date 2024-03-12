@@ -54,7 +54,8 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
     ];
 } elseif ($data_start_conv > date('Y-m-d H:i:s')) {
     // Verifica se o agendamento é para o mesmo dia e horário é futuro
-    if (($data_start_conv > date('Y-m-d')) ||
+    if (
+        ($data_start_conv > date('Y-m-d')) ||
         ($data_start_conv == date('Y-m-d') && date('H:i', strtotime($dados['start'])) > date('H:i'))
     ) {
         // Verifica se o horário está disponível

@@ -182,7 +182,7 @@ mysqli_close($conn);
 
                                     <optgroup label="Categoria do Atendimento">
                                         <option value="IPM">IPM</option>
-                                        <option value="Demais">Demais</option>
+                                        <!-- <option value="Demais">Demais</option> -->
                                         <option value="Sindicância">Sindicância</option>
                                     </optgroup>
 
@@ -253,7 +253,7 @@ mysqli_close($conn);
                             <label class="col-sm-2 col-form-label">Portaria</label>
                             <div class="col-sm-10">
                                 <input type="text" name="ordinance" class="form-control" id="ordinance"
-                                    placeholder="Objeto da Portaria" required="required">
+                                    placeholder="Objeto da Portaria" required="required" style="width: 100%;">
                             </div>
                         </div>
 
@@ -268,12 +268,18 @@ mysqli_close($conn);
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Telefone</label>
                             <div class="col-sm-10">
-                                <input type="tel" name="phone" class="form-control" id="phone" value="+55 "
-                                    placeholder="00 00000-0000" required="required" pattern="\+55 \d{2} \d{5}-\d{4}"
-                                    title="Digite um número de telefone válido">
-                                <small id="phoneHelp" class="form-text text-muted">Formato: +55 XX XXXXX-XXXX</small>
+                                <div class="input-group">
+                                    <div class="input-group-prepend" style="width: 100%;">
+                                        <span class="input-group-text">+55</span>
+                                        <input type="tel" name="phone" class="form-control" id="phone"
+                                            placeholder="00 00000-0000" required="required" pattern="\d{2} \d{5}-\d{4}"
+                                            title="Digite um número de telefone válido">
+                                        <!-- <small id="phoneHelp" class="form-text text-muted" style="width: 100%;">Formato: XX XXXXX-XXXX</small> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">E-mail</label>
@@ -317,14 +323,16 @@ mysqli_close($conn);
                             class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
                     <p><i class="fas fa-check-circle"></i> Solicitações com agendamento pendente estão no calendário em
                         cor <span class="custom-box custom-box-yellow">amarelo.</span></p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento confirmado estão no calendário em
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento confirmado estão no calendário
+                        em
                         cor <span class="custom-box custom-box-green">verde.</span></p>
                     <p><i class="fas fa-check-circle"></i> Solicitações com agendamento cancelado estão no calendário em
                         cor <span class="custom-box custom-box-red">vermelho.</span></p>
                     <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou Ciente</button>
+                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou
+                        Ciente</button>
                 </div>
             </div>
         </div>
@@ -406,19 +414,19 @@ mysqli_close($conn);
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
                     ?>
-                                            events: './backend/listar_eventos.php',
+                                                    events: './backend/listar_eventos.php',
                     <?php
                 } elseif ($_GET['cod'] == 1) {
                     ?>
-                                            events: './backend/listar_eventos-1.php',
+                                                    events: './backend/listar_eventos-1.php',
                     <?php
                 } elseif ($_GET['cod'] == 2) {
                     ?>
-                                            events: './backend/listar_eventos-2.php',
+                                                    events: './backend/listar_eventos-2.php',
                     <?php
                 } elseif ($_GET['cod'] == 3) {
                     ?>
-                                            events: './backend/listar_eventos-3.php',
+                                                    events: './backend/listar_eventos-3.php',
                     <?php
                 }
                 ?>
@@ -473,6 +481,7 @@ mysqli_close($conn);
         }
     </script>
 
+    <!-- Script para configurar o formato do número de telefone -->
     <script>
         document.getElementById('phone').addEventListener('input', function (e) {
             let input = e.target;

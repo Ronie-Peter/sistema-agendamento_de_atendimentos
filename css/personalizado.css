@@ -18,6 +18,11 @@ body {
     word-wrap: break-word;
 }
 
+.form-control {
+    width: 100% !important;
+}
+
+
 .visevent {
     display: block;
 }
