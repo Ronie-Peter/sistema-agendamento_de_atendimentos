@@ -16,7 +16,6 @@ mysqli_close($conn);
 
 <head>
     <title>Agendamento Jurídico - HCE</title>
-    <!-- Required meta tags -->
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!-- FullCalendar CSS -->
@@ -183,7 +182,7 @@ mysqli_close($conn);
                                     <optgroup label="Categoria do Atendimento">
                                         <option value="IPM">IPM</option>
                                         <!-- <option value="Demais">Demais</option> -->
-                                        <option value="Sindicância">Sindicância</option>
+                                        <!-- <option value="Sindicância">Sindicância</option> -->
                                     </optgroup>
 
                                     <!-- <optgroup label="Áreas para esportes">
@@ -270,11 +269,7 @@ mysqli_close($conn);
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend" style="width: 100%;">
-                                        <span class="input-group-text">+55</span>
-                                        <input type="tel" name="phone" class="form-control" id="phone"
-                                            placeholder="00 00000-0000" required="required" pattern="\d{2} \d{5}-\d{4}"
-                                            title="Digite um número de telefone válido">
-                                        <!-- <small id="phoneHelp" class="form-text text-muted" style="width: 100%;">Formato: XX XXXXX-XXXX</small> -->
+                                    <input type="text" class="form-control" id="telefone" name="telefone" maxlength="15" placeholder="(xx) xxxxx-xxxx">
                                     </div>
                                 </div>
                             </div>
@@ -414,19 +409,19 @@ mysqli_close($conn);
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
                     ?>
-                                                    events: './backend/listar_eventos.php',
+                                                        events: './backend/listar_eventos.php',
                     <?php
                 } elseif ($_GET['cod'] == 1) {
                     ?>
-                                                    events: './backend/listar_eventos-1.php',
+                                                        events: './backend/listar_eventos-1.php',
                     <?php
                 } elseif ($_GET['cod'] == 2) {
                     ?>
-                                                    events: './backend/listar_eventos-2.php',
+                                                        events: './backend/listar_eventos-2.php',
                     <?php
                 } elseif ($_GET['cod'] == 3) {
                     ?>
-                                                    events: './backend/listar_eventos-3.php',
+                                                        events: './backend/listar_eventos-3.php',
                     <?php
                 }
                 ?>
@@ -482,19 +477,26 @@ mysqli_close($conn);
     </script>
 
     <!-- Script para configurar o formato do número de telefone -->
-    <script>
+    <!-- <script>
         document.getElementById('phone').addEventListener('input', function (e) {
             let input = e.target;
             let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
 
-            // Adiciona a parte fixa do número e formata o restante
-            if (value.length > 2) {
-                value = '+55 ' + value.substring(2, 4) + ' ' + value.substring(4, 9) + '-' + value.substring(9, 13);
+            // Adiciona o prefixo do país e formata o restante do número
+            //let countryCode = '+55 ';
+            //value = countryCode + value;
+
+            // Formata o restante do número
+            if (value.length > countryCode.length) {
+                value = value.substring(0, countryCode.length + 2) + ' ' + value.substring(countryCode.length + 2);
+                if (value.length > countryCode.length + 5) {
+                    value = value.substring(0, countryCode.length + 5) + '-' + value.substring(countryCode.length + 5);
+                }
             }
 
             input.value = value;
         });
-    </script>
+    </script> -->
 
     <!-- Script para mostrar a mensagem informativa ao carregar a página -->
     <script>
@@ -510,5 +512,33 @@ mysqli_close($conn);
     </script>
 
 </body>
+
+<script>
+    document.getElementById('telefone').addEventListener('input', function (e) {
+    let telefone = e.target.value;
+
+    // Remove tudo que não for dígito
+    telefone = telefone.replace(/\D/g, '');
+
+    // Verifica o comprimento da string para aplicar o formato
+    if (telefone.length > 10) {
+        // Formata com DDD e número no formato (xx) xxxxx-xxxx
+        telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+    } else if (telefone.length > 5) {
+        // Formata com DDD e número no formato (xx) xxxx-xxxx
+        telefone = telefone.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+    } else if (telefone.length > 2) {
+        // Formata com DDD (xx) xxxx ou (xx) xxxxx
+        telefone = telefone.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+    } else {
+        // Formata com DDD (xx
+        telefone = telefone.replace(/^(\d{0,2})/, '($1');
+    }
+
+    // Atualiza o valor do campo com a máscara aplicada
+    e.target.value = telefone;
+});
+
+</script>
 
 </html>
