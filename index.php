@@ -182,7 +182,7 @@ mysqli_close($conn);
                                     <optgroup label="Categoria do Atendimento">
                                         <option value="IPM">IPM</option>
                                         <!-- <option value="Demais">Demais</option> -->
-                                        <option value="Sindicância">Sindicância</option>
+                                        <!-- <option value="Sindicância">Sindicância</option> -->
                                     </optgroup>
 
                                     <!-- <optgroup label="Áreas para esportes">
@@ -269,7 +269,7 @@ mysqli_close($conn);
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend" style="width: 100%;">
-                                    <input type="text" class="form-control" id="telefone" maxlength="15" placeholder="(xx) xxxxx-xxxx">
+                                    <input type="text" class="form-control" id="telefone" name="telefone" maxlength="15" placeholder="(xx) xxxxx-xxxx">
                                     </div>
                                 </div>
                             </div>
