@@ -101,7 +101,7 @@ mysqli_close($conn);
             <!-- Carregamento do calendário -->
             <div style="text-align: center;">
                 <p>
-                <h1><strong>Assessoramento para Sindicantes e<br>Encarregados de IPM</strong></h1>
+                <h1><strong>Assessoramento :: Encarregados de IPM</strong></h1>
                 </p>
             </div>
             <div id='calendar'></div>
@@ -184,17 +184,6 @@ mysqli_close($conn);
                                         <!-- <option value="Demais">Demais</option> -->
                                         <!-- <option value="Sindicância">Sindicância</option> -->
                                     </optgroup>
-
-                                    <!-- <optgroup label="Áreas para esportes">
-                                        <option value="Piscina">Piscina</option>
-                                        <option value="Quadra de Areia">Quadra de Areia</option>
-                                        <option value="Quadra Coberta">Quadra Coberta</option>
-                                    </optgroup>
-
-                                    <optgroup label="Laboratórios">
-                                        <option value="Laboratório de Informática">Laboratório de Informática</option>
-                                        <option value="Laboratório de Agronomia">Laboratório de Agronomia</option>
-                                    </optgroup> -->
                                 </select>
                             </div>
                         </div>
@@ -269,7 +258,8 @@ mysqli_close($conn);
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-prepend" style="width: 100%;">
-                                    <input type="text" class="form-control" id="telefone" name="telefone" maxlength="15" placeholder="(xx) xxxxx-xxxx">
+                                        <input type="text" class="form-control" id="telefone" name="telefone"
+                                            maxlength="15" placeholder="(xx) xxxxx-xxxx">
                                     </div>
                                 </div>
                             </div>
@@ -309,7 +299,7 @@ mysqli_close($conn);
                     </button>
                 </div>
                 <div class="modal-body custom-modal-body">
-                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos sindicantes, encarregados
+                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos encarregados
                         de IPM e escrivães.</p>
                     <p><i class="fas fa-check-circle"></i> O agendamento poderá ser cancelado até 1 (uma) hora antes do
                         atendimento.</p>
@@ -408,20 +398,16 @@ mysqli_close($conn);
                 /* Filtragem da escolha de visualização dos eventos */
                 <?php
                 if (!isset($_GET['cod']) or $_GET['cod'] > 3) {
-                    ?>
-                                                        events: './backend/listar_eventos.php',
+                    ?> events: './backend/listar_eventos.php',
                     <?php
                 } elseif ($_GET['cod'] == 1) {
-                    ?>
-                                                        events: './backend/listar_eventos-1.php',
+                    ?> events: './backend/listar_eventos-1.php',
                     <?php
                 } elseif ($_GET['cod'] == 2) {
-                    ?>
-                                                        events: './backend/listar_eventos-2.php',
+                    ?> events: './backend/listar_eventos-2.php',
                     <?php
                 } elseif ($_GET['cod'] == 3) {
-                    ?>
-                                                        events: './backend/listar_eventos-3.php',
+                    ?> events: './backend/listar_eventos-3.php',
                     <?php
                 }
                 ?>
@@ -515,29 +501,29 @@ mysqli_close($conn);
 
 <script>
     document.getElementById('telefone').addEventListener('input', function (e) {
-    let telefone = e.target.value;
+        let telefone = e.target.value;
 
-    // Remove tudo que não for dígito
-    telefone = telefone.replace(/\D/g, '');
+        // Remove tudo que não for dígito
+        telefone = telefone.replace(/\D/g, '');
 
-    // Verifica o comprimento da string para aplicar o formato
-    if (telefone.length > 10) {
-        // Formata com DDD e número no formato (xx) xxxxx-xxxx
-        telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
-    } else if (telefone.length > 5) {
-        // Formata com DDD e número no formato (xx) xxxx-xxxx
-        telefone = telefone.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
-    } else if (telefone.length > 2) {
-        // Formata com DDD (xx) xxxx ou (xx) xxxxx
-        telefone = telefone.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
-    } else {
-        // Formata com DDD (xx
-        telefone = telefone.replace(/^(\d{0,2})/, '($1');
-    }
+        // Verifica o comprimento da string para aplicar o formato
+        if (telefone.length > 10) {
+            // Formata com DDD e número no formato (xx) xxxxx-xxxx
+            telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+        } else if (telefone.length > 5) {
+            // Formata com DDD e número no formato (xx) xxxx-xxxx
+            telefone = telefone.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+        } else if (telefone.length > 2) {
+            // Formata com DDD (xx) xxxx ou (xx) xxxxx
+            telefone = telefone.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+        } else {
+            // Formata com DDD (xx
+            telefone = telefone.replace(/^(\d{0,2})/, '($1');
+        }
 
-    // Atualiza o valor do campo com a máscara aplicada
-    e.target.value = telefone;
-});
+        // Atualiza o valor do campo com a máscara aplicada
+        e.target.value = telefone;
+    });
 
 </script>
 
