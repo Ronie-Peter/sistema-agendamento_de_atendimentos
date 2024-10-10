@@ -14,7 +14,7 @@ body {
     margin-top: 3%;
 }
 
-.row{
+.row {
     word-wrap: break-word;
 }
 
@@ -77,7 +77,7 @@ a:focus {
     margin: 40px 0;
 }
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -313,32 +313,35 @@ ul ul a {
     MODAL DE INFORMAÇÕES
 ----------------------------------------------------- */
 
-    .custom-modal-body p {
-        color: #2C3E50 !important;
-        font-weight: bold;
-    }
+.custom-modal-body p {
+    color: #2C3E50 !important;
+    font-weight: bold;
+}
 
-    .custom-box {
-        display: inline-block;
-        padding: 5px;
-        border-radius: 5px;
-    }
+.custom-box {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+}
 
-    .custom-box-yellow {
-        background-color: #FFD700;
-        color: #2C3E50;
-    }
+.custom-box-yellow {
+    background-color: #FFD700;
+    color: #2C3E50;
+}
 
-    .custom-box-green {
-        background-color: #00D100;
-        color: #2C3E50;
-    }
+.custom-box-green {
+    background-color: #00D100;
+    color: #2C3E50;
+}
 
-    .custom-box-red {
-        background-color: #ff0000;
-        color: #2C3E50;
-    }
+.custom-box-red {
+    background-color: #ff0000;
+    color: #2C3E50;
+}
 
-    .underline-text {
-        border-bottom: 2px solid #2C3E50;
-    }
+.underline-text {
+    border-bottom: 2px solid #2C3E50;
+}
+.modal-footer {
+    flex-direction: column;
+}

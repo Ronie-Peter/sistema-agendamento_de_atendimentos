@@ -288,36 +288,28 @@ mysqli_close($conn);
     </div>
 
     <!-- Modal Informativo -->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="infoModalLabel"><strong>Informações Importantes</strong></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="display: none;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body custom-modal-body">
-                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos encarregados
-                        de IPM e escrivães.</p>
-                    <p><i class="fas fa-check-circle"></i> O agendamento poderá ser cancelado até 1 (uma) hora antes do
-                        atendimento.</p>
-                    <p><i class="fas fa-check-circle"></i> Explore as áreas <span
-                            class="underline-text">"Informações"</span> e <span
-                            class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento pendente estão no calendário em
-                        cor <span class="custom-box custom-box-yellow">amarelo.</span></p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento confirmado estão no calendário
-                        em
-                        cor <span class="custom-box custom-box-green">verde.</span></p>
-                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento cancelado estão no calendário em
-                        cor <span class="custom-box custom-box-red">vermelho.</span></p>
-                    <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
+                    <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos encarregados e escrivães de IPM.</p>
+                    <p><i class="fas fa-check-circle"></i> Explore as áreas <span class="underline-text">"Informações"</span> e <span class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento pendente serão exibidas no calendário em <span class="custom-box custom-box-yellow">amarelo.</span></p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento confirmado serão exibidas no calendário em <span class="custom-box custom-box-green">verde.</span></p>
+                    <p><i class="fas fa-check-circle"></i> Solicitações com agendamento cancelado serão exibidas no calendário em <span class="custom-box custom-box-red">vermelho.</span></p>                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou
-                        Ciente</button>
+                    <p class="mb-1">O agendamento prévio não garante a realização do atendimento pela Assessoria Jurídica. Ao selecionar uma data e horário, a disponibilidade será avaliada, e o status do agendamento será atualizado conforme descrito acima.</p>
+                    <div class="modal-body custom-modal-body p-0">
+                        <p>Por favor, clique no botão "Estou ciente" para continuar.</p>
+                    </div>                    
+                    <button type="button" class="btn btn-primary" id="btnIamAware" data-dismiss="modal">Estou Ciente</button>
                 </div>
             </div>
         </div>
