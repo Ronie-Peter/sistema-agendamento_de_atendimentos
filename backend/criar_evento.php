@@ -70,11 +70,11 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
         'sit' => false,
         'msg' => '<div class="alert alert-danger" role="alert">O agendamento para o mesmo dia não é permitido.</div>'
     ];
-} elseif ($hoursDiff < 24) {
-    // Impede agendamento para um prazo inferior a 24 horas
+} elseif ($hoursDiff < 12) {
+    // Impede agendamento para um prazo inferior a 12 horas
     $retorna = [
         'sit' => false,
-        'msg' => '<div class="alert alert-danger" role="alert">O agendamento deve ser feito com pelo menos 24 horas de antecedência.</div>'
+        'msg' => '<div class="alert alert-danger" role="alert">O agendamento deve ser feito com pelo menos 12 horas de antecedência.</div>'
     ];
 } else {
     // Verifica se o horário está disponível

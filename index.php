@@ -299,6 +299,7 @@ mysqli_close($conn);
                 </div>
                 <div class="modal-body custom-modal-body">
                     <p><i class="fas fa-check-circle"></i> O agendamento designa-se apenas aos encarregados e escrivães de IPM.</p>
+                    <p><i class="fas fa-check-circle"></i> O agendamento precisa ser realizado com no mínimo 12 horas de antecedência.</p>
                     <p><i class="fas fa-check-circle"></i> Explore as áreas <span class="underline-text">"Informações"</span> e <span class="underline-text">"Materiais"</span> para acesso a ferramentas de apoio.</p>
                     <p><i class="fas fa-check-circle"></i> Solicitações com agendamento pendente serão exibidas no calendário em <span class="custom-box custom-box-yellow">amarelo.</span></p>
                     <p><i class="fas fa-check-circle"></i> Solicitações com agendamento confirmado serão exibidas no calendário em <span class="custom-box custom-box-green">verde.</span></p>
