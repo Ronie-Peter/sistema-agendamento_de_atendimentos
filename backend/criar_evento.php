@@ -46,6 +46,10 @@ date_default_timezone_set('America/Sao_Paulo');
 // Verifica se a data do agendamento é um sábado ou domingo
 $diaDaSemana = date('N', strtotime($dados['date'])); // Obtém o dia da semana (1 para segunda-feira, 7 para domingo)
 
+// Define o limite para agendamento: 12h00 do dia anterior à data desejada
+$agendamentoDate = new DateTime($dados['date']);
+$agendamentoDate->modify('-1 day')->setTime(12, 0); // Define 12h00 do dia anterior
+
 $currentDateTime = new DateTime(); // Data e hora atual
 $agendamentoDateTime = new DateTime($data_start_conv); // Data e hora do agendamento
 
@@ -70,11 +74,11 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
         'sit' => false,
         'msg' => '<div class="alert alert-danger" role="alert">O agendamento para o mesmo dia não é permitido.</div>'
     ];
-} elseif ($hoursDiff < 12) {
-    // Impede agendamento para um prazo inferior a 12 horas
+} elseif ($currentDateTime > $agendamentoDate) {
+    // Impede agendamento se a data e hora atual for posterior a 12h00 do dia anterior
     $retorna = [
         'sit' => false,
-        'msg' => '<div class="alert alert-danger" role="alert">O agendamento deve ser feito com pelo menos 12 horas de antecedência.</div>'
+        'msg' => '<div class="alert alert-danger" role="alert">O agendamento deve ser realizado até 12h00 do dia anterior à data desejada.</div>'
     ];
 } else {
     // Verifica se o horário está disponível
