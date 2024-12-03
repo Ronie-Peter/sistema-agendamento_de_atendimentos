@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     /* Instruções javascript - funcionamento do botão que expande/recolhe o menu sidebar */
     $('#sidebarCollapse').on('click', function () {

@@ -1,8 +1,9 @@
 <?php
+
 // Definição dos horários de início e fim desejados
 $startTime = strtotime('07:30');
 $endTime = strtotime('12:00');
-
+require './Email.php';
 $availableTimes = []; // Array para armazenar os horários disponíveis
 
 // Geração dos horários de 45 minutos entre 07:30 e 12:00
@@ -20,6 +21,7 @@ while ($startTime < $endTime) {
 include_once "conexao.php";
 /* Iniciando sessão */
 session_start();
+
 /* Coleta os dados do evento que o modal captura e envia */
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -106,6 +108,8 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
                 'msg' => '<div class="alert alert-success" role="alert">Atendimento agendado com sucesso!</div>'
             ];
             $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Atendimento agendado com sucesso!</div>';
+            $email = new Email();
+            $email->enviar();
         } else {
             $retorna = [
                 'sit' => false,

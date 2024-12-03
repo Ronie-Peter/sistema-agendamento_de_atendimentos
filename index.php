@@ -1,4 +1,5 @@
 <?php
+
 /* Iniciando conexão com banco de dados */
 require_once './backend/conexao.php';
 /* Iniciando sessão */
@@ -171,7 +172,7 @@ mysqli_close($conn);
                 <!-- Formulário de criação do evento -->
                 <div class="modal-body">
                     <span id="msg-add"></span>
-                    <form id="addevent" method="POST" enctype="multipart/form-data">
+                    <form id="addevent" action="EnviarEmail.php" name="form_agendamento" method="POST" enctype="multipart/form-data">
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Categoria</label>
                             <div class="col-sm-10">
@@ -180,7 +181,7 @@ mysqli_close($conn);
                                     </option>
 
                                     <optgroup label="Categoria do Atendimento">
-                                        <option value="IPM">IPM</option>
+                                        <option value="IPM" name="categoria">IPM</option>
                                         <!-- <option value="Demais">Demais</option> -->
                                         <!-- <option value="Sindicância">Sindicância</option> -->
                                     </optgroup>
@@ -454,28 +455,6 @@ mysqli_close($conn);
             return year + '-' + month + '-' + day;
         }
     </script>
-
-    <!-- Script para configurar o formato do número de telefone -->
-    <!-- <script>
-        document.getElementById('phone').addEventListener('input', function (e) {
-            let input = e.target;
-            let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-
-            // Adiciona o prefixo do país e formata o restante do número
-            //let countryCode = '+55 ';
-            //value = countryCode + value;
-
-            // Formata o restante do número
-            if (value.length > countryCode.length) {
-                value = value.substring(0, countryCode.length + 2) + ' ' + value.substring(countryCode.length + 2);
-                if (value.length > countryCode.length + 5) {
-                    value = value.substring(0, countryCode.length + 5) + '-' + value.substring(countryCode.length + 5);
-                }
-            }
-
-            input.value = value;
-        });
-    </script> -->
 
     <!-- Script para mostrar a mensagem informativa ao carregar a página -->
     <script>
