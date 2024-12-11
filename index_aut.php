@@ -105,10 +105,12 @@ if (!isset($_SESSION['usuario'])) {
             </div>
             <div id='calendar'></div>
             <!-- Rodapé da pagina -->
-            <footer class="main-footer p-4 mt-5">
+            <footer class="main-footer p-4 mt-5 text-center">
                 <div class="container">
-                    <div class="text-center">
-                        Version <a href="https://github.com/Bezerha/Projeto-Agendamento"> 2.3.5 </a> &copy; 2022 NIEAD
+                    <div>
+                        <span>Hospital Central do Exército<br>
+                            <span>&copy; <span id="currentYear"></span> Divisão de Tecnologia da Informação e
+                                Comunicação</span>
                     </div>
                 </div>
             </footer>
@@ -392,6 +394,14 @@ if (!isset($_SESSION['usuario'])) {
                     crossorigin="anonymous"></script>
                 <!-- Scripts personalizados -->
                 <script src="js/personalizado.js"></script>
+
+                <!-- Instrução JavaScript para atualizar ano vigente no footer -->
+                <script>
+                    const yearElement = document.getElementById('currentYear');
+                    const currentYear = new Date().getFullYear();
+                    yearElement.textContent = ` ${currentYear}`;
+                </script>
+
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         /* Instruções javascript - carregamento personalizado do calendário */

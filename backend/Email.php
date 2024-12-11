@@ -24,7 +24,7 @@ class Email {
 
             // Configurações do e-mail
             $mail->setFrom('agenda.hce.saj@gmail.com', 'Agenda - Assessoria Jurídica');
-            $mail->addAddress('assjhce@gmail.com', 'Agenda - Assessoria Jurídica');
+            $mail->addAddress('ronie.peter.01@gmail.com', 'Agenda - Assessoria Jurídica');
 
             // Conteúdo do e-mail
             $mail->isHTML(true);
@@ -36,7 +36,7 @@ class Email {
             $mail->send();
             //echo 'E-mail enviado com sucesso!';
         } catch (Exception $e) {
-            //echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}";
+            echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}"; die;
         }
         
     }
