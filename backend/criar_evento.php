@@ -108,8 +108,8 @@ if ($diaDaSemana >= 6) { // Se for sábado (6) ou domingo (7)
                 'msg' => '<div class="alert alert-success" role="alert">Atendimento agendado com sucesso!</div>'
             ];
             $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Atendimento agendado com sucesso!</div>';
-            $email = new Email();
-            $email->enviar();
+            // $email = new Email();
+            // $email->enviar();
         } else {
             $retorna = [
                 'sit' => false,
