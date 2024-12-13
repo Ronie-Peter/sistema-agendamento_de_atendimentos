@@ -34,9 +34,9 @@ class Email {
 
             // Enviar e-mail
             $mail->send();
-            //echo 'E-mail enviado com sucesso!';
+            // echo 'E-mail enviado com sucesso!';
         } catch (Exception $e) {
-            echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}"; die;
+            // echo "Erro ao enviar o e-mail: {$mail->ErrorInfo}"; die;
         }
         
     }
